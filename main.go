@@ -1,6 +1,7 @@
 package main
 
 import (
+	"base/ch8"
 	"fmt"
 )
 
@@ -17,4 +18,7 @@ func main() {
 		// for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.</p>
 		fmt.Println("i =", 100/i)
 	}
+
+	ch8.Main()
+
 }
