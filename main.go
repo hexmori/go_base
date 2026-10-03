@@ -1,7 +1,6 @@
 package main
 
 import (
-	"base/ch8"
 	"fmt"
 )
 
@@ -19,6 +18,8 @@ func main() {
 		fmt.Println("i =", 100/i)
 	}
 
-	ch8.Main()
+	//ch8.Main()
+	//ch8.MainClock1()
+	//ch8.MainNetCat1()
 
 }

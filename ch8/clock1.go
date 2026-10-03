@@ -1,4 +1,4 @@
-package ch8
+package main
 
 import (
 	"io"
@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	listener, err := net.Listen("tcp", "localhost:8080")
+	listener, err := net.Listen("tcp", "127.0.0.1:8000")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -18,14 +18,14 @@ func main() {
 			log.Fatal(err)
 			continue
 		}
-		handleConn(conn)
+		go handleConn(conn)
 	}
 }
 
 func handleConn(c net.Conn) {
 	defer c.Close()
 	for {
-		_, err := io.WriteString(c, time.Now().Format("2006-01-02 15:04:05"))
+		_, err := io.WriteString(c, time.Now().Format("2006-01-02 15:04:05 \n"))
 		if err != nil {
 			return
 		}
